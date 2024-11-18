@@ -7,9 +7,9 @@ This Python script is designed to read a CSV file, filter specific columns, and 
 - Reads a CSV file from a specified input directory.
 - Filters the Dataframe to include specified columns.
 - Formats the `Timestamp` column into one of three formats: 
-	- **standard**: removes the date from `Timestamp`
-	- **seconds**: removes the date and milliseconds
-	- **minutes**: removes the date, milliseconds and seconds
+	- **standard**: Removes the date from `Timestamp`
+	- **seconds**: Removes the date and milliseconds
+	- **minutes**: Removes the date, milliseconds and seconds
 - Writes the formatted Dataframe back to a CSV file in the output directory.
 - Automatically validates input arguments and directories.
 - Creates the output directory if it does not exist.
@@ -42,13 +42,13 @@ python main.py
 
 **Note**: 
 - Use multiple -c flags for each column: -c Timestamp -c Tool -c "NC Program"
-- when there is a blank space in the column name use " to make sure it's seen as one argument
-- if you want to keep all columns in the CSV file use -c all
+- When there is a blank space in the column name use " to make sure it's seen as one argument
+- If you want to keep all columns in the CSV file use -c all
 
 **Options for -f**:
-- standard: removes the date from the Timestamp. 
-- seconds: removes the date and milliseconds. 
-- minutes: removes the date, milliseconds and seconds.
+- standard: Removes the date from the Timestamp. 
+- seconds: Removes the date and milliseconds. 
+- minutes: Removes the date, milliseconds and seconds.
 - Default setting for `-f` if not set in argument list: standard
 
 ## Examples
@@ -56,7 +56,7 @@ python main.py
 
 		-i <input_directory> -o <output_directory> -f standard
 
-Note: argument -f is optional and will be set to standard by default.
+Note: Argument -f is optional and will be set to standard by default.
 
 **2.** Filter specific columns and remove milliseconds from `Timestamp`
 
@@ -66,26 +66,26 @@ Note: argument -f is optional and will be set to standard by default.
 
 		-i <input_directory> -o <new_output_directory> -f standard
 
-Note: the script will create the output directory if it does not already exist.
+Note: The script will create the output directory if it does not already exist.
 
 
 ## Validation and Error Handling
-- the script ensures that the -i and -o directories exist or creates the output directory if needed.
+- The script ensures that the -i and -o directories exist or creates the output directory if needed.
 - Validates that the `Timestamp` column is included in filtered columns if filtering is applied. 
 - Stops execution and logs an error if: 
 	- No CSV files are found in the input directory.
 	- Invalid column names are provided. 
-	- an invalid format is specified for the `-f` argument. 
+	- An invalid format is specified for the `-f` argument. 
 
 
 ## Script Workflow
 **1. Input directory**
 
-reads the first CSV file from the specified input directory. 
+Reads the first CSV file from the specified input directory. 
 
 **2. Validation**
 
-validates columns names against the header of the CSV file and checks if `Timestamp` column is included. 
+Validates columns names against the header of the CSV file and checks if `Timestamp` column is included. 
 
 **3. Data Processing**
 
@@ -93,7 +93,7 @@ Filters and formats the Dataframe based on user specifications.
 
 **4. Output**
 
-writes the processed Dataframe back to the specified output directory as a CSV file. 
+Writes the processed Dataframe back to the specified output directory as a CSV file. 
 
 
 ## Example Output
