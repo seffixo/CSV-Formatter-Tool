@@ -5,8 +5,8 @@ This Python script is designed to read a CSV file, filter specific columns, and 
 
 ## Features
 - Reads a CSV file from a specified input directory.
-- Filter the Dataframe to include specified columns.
-- Format the `Timestamp` column into one of three formats: 
+- Filters the Dataframe to include specified columns.
+- Formats the `Timestamp` column into one of three formats: 
 	- **standard**: removes the date from `Timestamp`
 	- **seconds**: removes the date and milliseconds
 	- **minutes**: removes the date, milliseconds and seconds
@@ -24,8 +24,8 @@ Install the required library using:
  	pip install pandas
 
 ## Usage
-Run the script using following arguments: 
-
+Run the script using the following arguments: 
+python main.py
 -i "input_directory"
 -o "output_directory"
 -c "columns_to_keep"
@@ -37,20 +37,19 @@ Run the script using following arguments:
 `-o, --output` (Required): Path to the output directory where the formatted CSV file will be saved. 
  
 `-c, --columns` (Required): Columns to be kept in resulting CSV file.
- 
+
+ `-f, --format` (Optional): Format for the `Timestamp` column. 
+
 **Note**: 
 - Use multiple -c flags for each column: -c Timestamp -c Tool -c "NC Program"
 - when there is a blank space in the column name use " to make sure it's seen as one argument
 - if you want to keep all columns in the CSV file use -c all
 
-`-f, --format` (Optional): Format for the `Timestamp` column. 
-
-**Options**:
+**Options for -f**:
 - standard: removes the date from the Timestamp. 
 - seconds: removes the date and milliseconds. 
 - minutes: removes the date, milliseconds and seconds.
-
-Default setting for `-f` if not set in argument list: standard
+- Default setting for `-f` if not set in argument list: standard
 
 ## Examples
 **1.** Format a CSV file and keep all columns
